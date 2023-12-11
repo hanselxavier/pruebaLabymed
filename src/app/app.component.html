@@ -1,0 +1,10 @@
+<h1>Hansel</h1>
+<mat-grid-list cols="4" rowHeight="100px">
+  @for (pokemon of Pokemones; track pokemon) {
+    <mat-grid-tile [colspan]=1 [rowspan]=4>
+      <app-poke-tarjeta [pokemon]="pokemon"></app-poke-tarjeta>
+    </mat-grid-tile>
+  }
+</mat-grid-list>
+
+<router-outlet></router-outlet>

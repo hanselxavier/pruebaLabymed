@@ -1,0 +1,7 @@
+<mat-grid-list cols="4" rowHeight="100px">
+    @for(poke of Pokemones; track $index){
+      <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <app-poke-tarjeta [pokemon]="poke"></app-poke-tarjeta>
+      </mat-grid-tile>
+    }
+</mat-grid-list>

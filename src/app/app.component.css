@@ -2,3 +2,11 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-spacer2 {
+    margin-left: 10px;
+  }

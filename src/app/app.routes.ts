@@ -5,7 +5,7 @@ import { ListarComponent } from './listar/listar.component';
 
 export const routes: Routes = [
     {
-        path: 'home', component: AppComponent
+        path: '', component: ListarComponent
     },
     {
         path: 'listar', component: ListarComponent

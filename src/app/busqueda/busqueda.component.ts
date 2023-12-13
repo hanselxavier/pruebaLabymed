@@ -6,7 +6,6 @@ import {MatButtonModule} from '@angular/material/button';
 import { ConsumoService } from '../consumo.service';
 import { MatCardModule } from '@angular/material/card';
 
-
 @Component({
   selector: 'app-busqueda',
   standalone: true,
@@ -24,13 +23,17 @@ export class BusquedaComponent {
   nombre:string = '';
   imagen:string = '';
   habilidad:any[] = [];
+  minuscula: string = '';
+
   miFormulario: FormGroup = this.fb.group({
     name: ['', Validators.required]
   })
 
+  
   consultarPokemon(){
-    console.log(this.miFormulario.get('name')?.value)
-    this.pokemonService.getPokemonName(this.miFormulario.get('name')?.value)
+    this.minuscula = this.miFormulario.get('name')?.value;
+
+    this.pokemonService.getPokemonName( this.minuscula.toLowerCase() )
       .subscribe( (Pokes:any) => {
         this.imagen=Pokes.sprites.front_default;
         this.habilidad=Pokes.abilities

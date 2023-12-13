@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { ConsumoService } from '../consumo.service';
 import { MatCardModule } from '@angular/material/card';
+import { PokeTarjetaComponent } from '../poke-tarjeta/poke-tarjeta.component';
 
 @Component({
   selector: 'app-busqueda',
@@ -14,7 +15,8 @@ import { MatCardModule } from '@angular/material/card';
             MatFormFieldModule, 
             MatInputModule,
             MatButtonModule,
-            ReactiveFormsModule
+            ReactiveFormsModule,
+            PokeTarjetaComponent
   ],
   templateUrl: './busqueda.component.html',
   styleUrl: './busqueda.component.css'
@@ -35,9 +37,8 @@ export class BusquedaComponent {
 
     this.pokemonService.getPokemonName( this.minuscula.toLowerCase() )
       .subscribe( (Pokes:any) => {
+        this.nombre = this.minuscula.toLocaleLowerCase();
         this.imagen=Pokes.sprites.front_default;
-        this.habilidad=Pokes.abilities
-        console.log(this.habilidad)
       });
   }
 

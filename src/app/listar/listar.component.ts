@@ -3,9 +3,10 @@ import { ConsumoService } from '../consumo.service';
 import { Pokemon } from '../interfaces/pokemon.interface';
 import { PokeTarjetaComponent } from '../poke-tarjeta/poke-tarjeta.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-listar',
@@ -14,7 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
             PokeTarjetaComponent,
             MatTableModule,
             MatIconModule,
-            MatButtonModule        
+            MatButtonModule,
+            RouterModule    
   ],
   templateUrl: './listar.component.html',
   styleUrl: './listar.component.css'
@@ -32,7 +34,6 @@ export class ListarComponent implements OnInit{
       .subscribe( (Pokes:any) => {
         this.Pokemones = Pokes.results;
         this.dataSource = this.Pokemones;
-        console.log(this.Pokemones)
       });
   }
 

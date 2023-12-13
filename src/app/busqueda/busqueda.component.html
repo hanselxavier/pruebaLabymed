@@ -7,15 +7,7 @@
           <button mat-button color="primary" type="submit">Buscar</button>
     </form>
 </div>
-    
-<mat-card class="example-card">
-    <img mat-card-image [src]="imagen" width="300px">
-    
-    <mat-card-header>{{nombre}}</mat-card-header>
-    <mat-card-content>
-        @for (item of habilidad; track item.ability) {
-            <p>{{item.name}}</p>
-        }
-        
-    </mat-card-content>
-</mat-card>
+
+<div>
+    <app-poke-tarjeta [name]="nombre" [url]="imagen"></app-poke-tarjeta>
+</div>

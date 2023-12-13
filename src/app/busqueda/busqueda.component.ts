@@ -24,7 +24,7 @@ import { PokeTarjetaComponent } from '../poke-tarjeta/poke-tarjeta.component';
 export class BusquedaComponent {
   nombre:string = '';
   imagen:string = '';
-  habilidad:any[] = [];
+  habilidad:any;
   minuscula: string = '';
 
   miFormulario: FormGroup = this.fb.group({
@@ -39,6 +39,7 @@ export class BusquedaComponent {
       .subscribe( (Pokes:any) => {
         this.nombre = this.minuscula.toLocaleLowerCase();
         this.imagen=Pokes.sprites.front_default;
+        this.habilidad=Pokes.abilities;
       });
   }
 

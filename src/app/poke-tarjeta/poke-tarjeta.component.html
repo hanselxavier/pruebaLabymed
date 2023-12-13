@@ -3,5 +3,9 @@
         <h1>{{name | uppercase }}</h1>
     
         <img mat-card-image [src]="url" width="300px">
+        <h1>HABILIDADES</h1>
+        @for (item of abilities; track $index) {
+            <p>{{item.ability.name}}</p>
+        }
     </div>
 </mat-card>

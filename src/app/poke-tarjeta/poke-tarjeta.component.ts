@@ -21,4 +21,5 @@ export class PokeTarjetaComponent {
   @Input() pokemon!: Pokemon;
   @Input() name!: string;
   @Input() url!: string;
+  @Input() abilities!: any;
 }

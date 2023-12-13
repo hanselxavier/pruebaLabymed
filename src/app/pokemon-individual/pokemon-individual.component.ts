@@ -20,6 +20,7 @@ export class PokemonIndividualComponent implements OnInit{
 
   name: string = '';
   img: string = '';
+  abilities: any;
   constructor( private activatedRoute: ActivatedRoute,
                 private pokemonService: ConsumoService){
 
@@ -34,6 +35,7 @@ export class PokemonIndividualComponent implements OnInit{
         console.log(pokemon);
         this.name = pokemon.name;
         this.img = pokemon.sprites.front_default;
+        this.abilities = pokemon.abilities;
       } )
   }
 }
